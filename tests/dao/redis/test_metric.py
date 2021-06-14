@@ -49,13 +49,14 @@ def _test_insert_and_retrieve(readings: List[MeterReading],
 
 
 # Challenge #2
+@pytest.mark.skip()
 def test_small(metric_dao, readings):
     _test_insert_and_retrieve(readings, metric_dao, 1)
 
-
+@pytest.mark.skip()
 def test_one_day(metric_dao, readings):
     _test_insert_and_retrieve(readings, metric_dao, 60 * 24)
 
-
+@pytest.mark.skip()
 def test_multiple_days(metric_dao, readings):
     _test_insert_and_retrieve(readings, metric_dao, 60 * 70)
