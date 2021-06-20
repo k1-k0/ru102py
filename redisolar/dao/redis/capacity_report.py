@@ -1,3 +1,4 @@
+from redisolar.models.models import Site
 from redisolar.dao.base import CapacityDaoBase
 from redisolar.dao.redis.base import RedisDaoBase
 from redisolar.models import CapacityReport
@@ -36,5 +37,7 @@ class CapacityReportDaoRedis(CapacityDaoBase, RedisDaoBase):
         # START Challenge #4
         # Remove the following line after you have added code to
         # get the real rank.
-        return 0
+        client = kwargs.get('pipeline', self.redis)
+        capacity_ranking_key = self.key_schema.capacity_ranking_key()
+        return client.zrevrank(capacity_ranking_key, site_id)
         # END Challenge #4
