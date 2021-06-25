@@ -25,4 +25,8 @@ class SlidingWindowRateLimiter(RateLimiterDaoBase, RedisDaoBase):
     def hit(self, name: str):
         """Record a hit using the rate-limiter."""
         # START Challenge #7
+        # use this
+        # ZADD
+        # ZREMRANGEBYSCORE
+        # ZCARD
         # END Challenge #7
