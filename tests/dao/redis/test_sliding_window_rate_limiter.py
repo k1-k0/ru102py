@@ -7,6 +7,7 @@ from redisolar.dao.redis.sliding_window_rate_limiter import SlidingWindowRateLim
 
 TEN_SECONDS = 10 * 1000
 
+
 # Challenge #7
 def test_within_limit_inside_window(redis, key_schema):
     exception_count = 0
